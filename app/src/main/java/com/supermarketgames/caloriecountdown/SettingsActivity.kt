@@ -18,6 +18,9 @@ class SettingsActivity : AppCompatActivity() {
         val returnButton: FloatingActionButton = findViewById(
             R.id.settingsReturnFloatingActionButton
         )
+        val darkModeSwitch: Switch = findViewById(
+            R.id.darkModeSwitch
+        )
 
         // Create intents
         val landingPageIntent = Intent(
@@ -28,6 +31,13 @@ class SettingsActivity : AppCompatActivity() {
         // Set on click listeners
         returnButton.setOnClickListener {
             startActivity(landingPageIntent)
+        }
+        darkModeSwitch.setOnClickListener {
+            if (darkModeSwitch.isChecked) {
+                AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_YES)
+            } else {
+                AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO)
+            }
         }
     }
 }
