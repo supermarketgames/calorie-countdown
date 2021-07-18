@@ -18,6 +18,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".HighScoresActivity"
+            android:label="@string/title_activity_high_scores"
+            android:theme="@style/Theme.CalorieCountdown.NoActionBar">
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/Theme.CalorieCountdown.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
