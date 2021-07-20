@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/highScoresReturnFloatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/teal_200"
+        android:baselineAlignBottom="false"
+        android:clickable="true"
+        android:contentDescription="@string/back_content_description"
+        android:src="@drawable/abc_vector_test"
+        app:backgroundTint="@color/teal_200"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rippleColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/highScoresLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/high_score_label"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/highScoresReturnFloatingActionButton"
+        app:layout_constraintStart_toEndOf="@+id/highScoresReturnFloatingActionButton"
+        app:layout_constraintTop_toTopOf="@+id/highScoresReturnFloatingActionButton" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/highScoresReturnFloatingActionButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,40 +1,45 @@
 package com.supermarketgames.caloriecountdown
 
+import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import com.supermarketgames.caloriecountdown.databinding.ActivityLandingPageBinding
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+
 
 class LandingPageActivity : AppCompatActivity() {
-
-    private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var binding: ActivityLandingPageBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityLandingPageBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        // Grab values from content view
+        setContentView(R.layout.activity_landing_page)
+        // val newGameButton: Button = findViewById(R.id.newGameButton)
+        val highScoresButton: Button = findViewById(R.id.highScoresButton)
+        val settingsButton: FloatingActionButton = findViewById(R.id.settingsFloatingActionButton)
 
-        setSupportActionBar(binding.toolbar)
+        // Create intents
+        val highScoresIntent = Intent(
+            this,
+            HighScoresActivity::class.java
+        )
+        val settingsIntent = Intent(
+            this,
+            SettingsActivity::class.java
+        )
 
-        val navController = findNavController(R.id.nav_host_fragment_content_landing_page)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        // Set on click listeners
+        // New game button
+        // newGameButton.setOnClickListener
 
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+        // High scores button
+        highScoresButton.setOnClickListener {
+            startActivity(highScoresIntent)
         }
-    }
 
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_landing_page)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
+        // Settings button
+        settingsButton.setOnClickListener{
+            startActivity(settingsIntent)
+        }
+
     }
 }

@@ -1,12 +1,37 @@
 <resources>
+    <!-- general -->
     <string name="app_name">Calorie Countdown</string>
     <string name="title_activity_landing_page">LandingPageActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="title_activity_high_scores">HighScoresActivity</string>
+    <string name="title_activity_settings">SettingsActivity</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!-- activity_landing_page -->
+    <string name="new_game_label">New Game</string>
+    <string name="high_score_label">High Scores</string>
+    <string name="settings_content_description">Settings</string>
+
+    <!-- fragment_high_scores -->
+    <string name="back_content_description">Return to home</string>
+
+    <!-- fragment_settings -->
+    <!-- Header -->
+    <string name="settings_label">Settings</string>
+
+    <!-- Switches -->
+    <string name="vibrate_label">Vibrate</string>
+    <string name="sound_label">Sound</string>
+    <string name="show_range_values_label">Show Range Values</string>
+    <string name="dark_mode_label">Dark Mode</string>
+    <string name="offline_label">Offline</string>
+
+    <!-- Buttons -->
+    <string name="more_stats_label">More Statistics</string>
+
+    <!-- Hyperlinks -->
+    <string name="privacy_policy_label">Privacy Policy</string>
+    <string name="discord_label">Discord</string>
+    <string name="reddit_label">Reddit</string>
+    <string name="rate_label">Rate</string>
+    <string name="donate_label">Donate</string>
+    <string name="github_label">GitHub/Wiki</string>
 </resources>
