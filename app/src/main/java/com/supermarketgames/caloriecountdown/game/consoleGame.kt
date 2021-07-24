@@ -17,10 +17,11 @@ fun main(args: Array<String>) {
     var pointCount = 0
     var numberXsReceived = 0
 
+    // The Game Loop
     while (true) {
         // Display how much time is left
         println(
-            "Timer: ${
+            "Time Left: ${
                 timeLimitSeconds - ((Instant.now().toEpochMilli() - startTime.toEpochMilli()) / 1000)
             }"
         )
@@ -29,7 +30,7 @@ fun main(args: Array<String>) {
         val calorieNumber = randomNumberGenerator.nextInt(0, 3)
 
         // Ask the user to guess
-        println("Guess the number of calories between 0 and 5 (inclusive):")
+        println("Guess the number of calories between 0 and 3 (inclusive):")
 
         // Check user's input
         val answerNumber = readLine()
