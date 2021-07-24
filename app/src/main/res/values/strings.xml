@@ -1,6 +1,10 @@
 <resources>
     <!-- general -->
     <string name="app_name">Calorie Countdown</string>
+    <string name="app_name_multiline">
+        Calorie
+        Countdown
+    </string>
     <string name="title_activity_landing_page">LandingPageActivity</string>
     <string name="title_activity_high_scores">HighScoresActivity</string>
     <string name="title_activity_settings">SettingsActivity</string>

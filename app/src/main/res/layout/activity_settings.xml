@@ -49,30 +49,35 @@
             android:id="@+id/vibrateSwitch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/app_padding"
             android:text="@string/vibrate_label" />
 
         <Switch
             android:id="@+id/soundSwitch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/app_padding"
             android:text="@string/sound_label" />
 
         <Switch
             android:id="@+id/showRangeValuesSwitch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/app_padding"
             android:text="@string/show_range_values_label" />
 
         <Switch
             android:id="@+id/darkModeSwitch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/app_padding"
             android:text="@string/dark_mode_label" />
 
         <Switch
             android:id="@+id/offlineSwitch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/app_padding"
             android:text="@string/offline_label" />
 
         <Space
@@ -83,11 +88,14 @@
             android:id="@+id/moreStatsButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/more_stats_label" />
+            android:width="@dimen/app_button_width"
+            android:text="@string/more_stats_label"
+            app:cornerRadius="@dimen/app_button_corner_radius" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/app_padding"
             android:orientation="horizontal">
 
             <TextView

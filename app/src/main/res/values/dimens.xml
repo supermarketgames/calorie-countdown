@@ -1,3 +1,11 @@
 <resources>
-    <dimen name="fab_margin">16dp</dimen>
+    <!--  Standard dimensions across app  -->
+    <dimen name="app_padding">16dp</dimen>
+
+    <!--  Button  -->
+    <dimen name="app_button_corner_radius">32dp</dimen>
+    <dimen name="app_button_width">200dp</dimen>
+
+    <!--  Floating Action Button  -->
+    <dimen name="fab_margin">@dimen/app_padding</dimen>
 </resources>
