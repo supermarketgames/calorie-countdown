@@ -3,10 +3,10 @@ package com.supermarketgames.caloriecountdown.game
 import java.time.Instant
 import kotlin.random.Random
 
-fun main(args: Array<String>) {
+fun main() {
     println("Game Start")
 
-    val randomNumberGenerator = Random(1)
+    val randomNumberGenerator = Random(Instant.now().toEpochMilli())
 
     // Constant game values
     val timeLimitSeconds = 60
@@ -53,13 +53,13 @@ fun main(args: Array<String>) {
         // If Timer is at 0 or less --> Game Over
         if (timeLimitSeconds - ((Instant.now().toEpochMilli() - startTime.toEpochMilli()) / 1000) <= 0) {
             println("Time's up!")
-            break;
+            break
         }
 
         // If number of 'X's reached --> Game Over
         if (numberXsReceived >= numberXsForGameOver) {
             println("That's $numberXsForGameOver X's!")
-            break;
+            break
         }
 
         // If User wants to quit --> Game Over
@@ -67,7 +67,7 @@ fun main(args: Array<String>) {
         val answerQuit = readLine()
         if (answerQuit != null && answerQuit.matches(Regex("^[yY]"))) {
             println("Quitting game...")
-            break;
+            break
         }
     }
 
