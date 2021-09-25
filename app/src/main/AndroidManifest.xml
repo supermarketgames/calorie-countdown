@@ -28,6 +28,11 @@
             android:label="@string/title_activity_settings"
             android:theme="@style/Theme.CalorieCountdown.NoActionBar">
         </activity>
+        <activity
+            android:name=".DatabaseManagementActivity"
+            android:label="DatabaseManagementActivity"
+            android:theme="@style/Theme.CalorieCountdown.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
