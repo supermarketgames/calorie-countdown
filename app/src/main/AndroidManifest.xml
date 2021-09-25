@@ -19,6 +19,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".BaseGameActivity"
+            android:label="@string/title_activity_game"
+            android:theme="@style/Theme.CalorieCountdown.NoActionBar" />
+        <activity
             android:name=".HighScoresActivity"
             android:label="@string/title_activity_high_scores"
             android:theme="@style/Theme.CalorieCountdown.NoActionBar">
