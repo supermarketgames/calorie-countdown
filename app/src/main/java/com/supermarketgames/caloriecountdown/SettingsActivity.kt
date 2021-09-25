@@ -2,6 +2,7 @@ package com.supermarketgames.caloriecountdown
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Switch
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -21,11 +22,18 @@ class SettingsActivity : AppCompatActivity() {
         val darkModeSwitch: Switch = findViewById(
             R.id.darkModeSwitch
         )
+        val moreStatsButton: Button = findViewById(
+            R.id.moreStatsButton
+        )
 
         // Create intents
         val landingPageIntent = Intent(
             this,
             LandingPageActivity::class.java
+        )
+        val databaseManagementIntent = Intent(
+            this,
+            DatabaseManagementActivity::class.java
         )
 
         // Set on click listeners
@@ -38,6 +46,9 @@ class SettingsActivity : AppCompatActivity() {
             } else {
                 AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO)
             }
+        }
+        moreStatsButton.setOnClickListener {
+            startActivity(databaseManagementIntent)
         }
     }
 }
