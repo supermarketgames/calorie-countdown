@@ -13,7 +13,7 @@ class LandingPageActivity : AppCompatActivity() {
 
         // Grab values from content view
         setContentView(R.layout.activity_landing_page)
-        // val newGameButton: Button = findViewById(R.id.newGameButton)
+        val newGameButton: Button = findViewById(R.id.newGameButton)
         val highScoresButton: Button = findViewById(R.id.highScoresButton)
         val settingsButton: FloatingActionButton = findViewById(R.id.settingsFloatingActionButton)
 
@@ -26,10 +26,16 @@ class LandingPageActivity : AppCompatActivity() {
             this,
             SettingsActivity::class.java
         )
+        val newGameIntent = Intent(
+            this,
+            BaseGameActivity::class.java
+        )
 
         // Set on click listeners
         // New game button
-        // newGameButton.setOnClickListener
+        newGameButton.setOnClickListener {
+            startActivity(newGameIntent)
+        }
 
         // High scores button
         highScoresButton.setOnClickListener {
@@ -37,7 +43,7 @@ class LandingPageActivity : AppCompatActivity() {
         }
 
         // Settings button
-        settingsButton.setOnClickListener{
+        settingsButton.setOnClickListener {
             startActivity(settingsIntent)
         }
 
