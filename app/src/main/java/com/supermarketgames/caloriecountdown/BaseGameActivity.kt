@@ -12,7 +12,7 @@ import kotlin.math.abs
 
 class BaseGameActivity : AppCompatActivity() {
 
-    lateinit var foodDatabaseHelper: FoodDatabaseHelper
+//    lateinit var foodDatabaseHelper: FoodDatabaseHelper
 
     val TIME_LIMIT_MILLISECONDS = 60000L
     val MAX_CALORIE_GUESS_DIFFERENCE = 500 // How far off can the guess be without receiving an 'X'
@@ -47,8 +47,9 @@ class BaseGameActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
 
-        foodDatabaseHelper = FoodDatabaseHelper(applicationContext)
-        foodItemList = getFoodItemList(foodDatabaseHelper)
+//        foodDatabaseHelper = FoodDatabaseHelper(applicationContext)
+//        foodItemList = getFoodItemList(foodDatabaseHelper)
+        foodItemList = initializeFoodItemList() // Eventually pass the FoodDatabaseHelper here
 
         // Grab values from content view
         setContentView(R.layout.activity_game)
@@ -167,6 +168,8 @@ class BaseGameActivity : AppCompatActivity() {
     // Game state change functions
 
     private fun toGameOver(reason: String?) {
+        // TODO figure out how to stop the timer if it's still running
+
         Toast.makeText(
             applicationContext,
             "Game Over" + if (!reason.isNullOrEmpty()) " - $reason" else "",
@@ -193,8 +196,8 @@ class BaseGameActivity : AppCompatActivity() {
         foodNameTextView.text = foodItem.name
     }
 
-    private fun getFoodItemList(foodDatabaseHelper: FoodDatabaseHelper): List<FoodItem> {
-        // TODO - eventually call the actual database for this
+    private fun initializeFoodItemList(): List<FoodItem> {
+        // TODO - eventually call the actual database for this (pass FoodDatabaseHelper as a parameter to this method)
 
         return arrayListOf(
             FoodItem(1, "Banana", 150),
