@@ -21,7 +21,8 @@
         <activity
             android:name=".BaseGameActivity"
             android:label="@string/title_activity_game"
-            android:theme="@style/Theme.CalorieCountdown.NoActionBar" />
+            android:theme="@style/Theme.CalorieCountdown.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".HighScoresActivity"
             android:label="@string/title_activity_high_scores"
