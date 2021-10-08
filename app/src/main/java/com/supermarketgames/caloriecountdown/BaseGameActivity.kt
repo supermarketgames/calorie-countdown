@@ -208,14 +208,22 @@ class BaseGameActivity : AppCompatActivity() {
     }
 
     private fun guessCaloriesAndAwardPointsOrXs(guessedCalories: Int) {
-        Toast.makeText(applicationContext, "Guessed: $guessedCalories", Toast.LENGTH_SHORT).show()
-
         // TODO - increment points or Xs
         val calorieDifference = abs(currentFoodItem.calories - guessedCalories)
         if (calorieDifference <= MAX_CALORIE_GUESS_DIFFERENCE) {
             updatePointCount(pointCount + (MAX_CALORIE_GUESS_DIFFERENCE - calorieDifference)) // Earn points based on how close
+            Toast.makeText(
+                applicationContext,
+                "+${MAX_CALORIE_GUESS_DIFFERENCE - calorieDifference}",
+                Toast.LENGTH_SHORT
+            ).show()
         } else {
             updateXCount(++xCount)
+            Toast.makeText(
+                applicationContext,
+                "X",
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 

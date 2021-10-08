@@ -52,19 +52,100 @@
 
     <!--    </androidx.constraintlayout.motion.widget.MotionLayout>-->
 
-    <SeekBar
-        android:id="@+id/caloriePickerSeekBar"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/app_padding"
+        android:layout_marginTop="24dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginRight="@dimen/app_padding"
-        android:layout_marginTop="64dp"
-        android:max="1000"
-        android:min="0"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pointsLabelTextView" />
+        app:layout_constraintTop_toBottomOf="@id/pointsValueTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/layout_border">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="0dp"
+            app:layout_constraintBottom_toTopOf="@id/calorieCountPickerLabelAmountPerServingTextView"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/calorieCountPickerDecorativeSpace"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@color/black"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/calorieCountPickerLabelAmountPerServingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/black"
+            android:text="Amount Per Serving"
+            android:fontFamily="helvetica"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/calorieCountPickerLabelTextView"/>
+
+        <TextView
+            android:id="@+id/calorieCountPickerLabelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="2dp"
+            android:textStyle="bold"
+            android:textSize="36dp"
+            android:text="Calories"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/caloriePickerSeekBar"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+        <TextView
+            android:id="@+id/calorieCountGuessTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:minHeight="@dimen/app_padding"
+            android:text="0"
+            android:textAlignment="textEnd"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="0dp"
+            android:textSize="48dp"
+            android:fontFamily="helvetica"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/caloriePickerSeekBar"
+            app:layout_constraintEnd_toEndOf="parent" />
+        <SeekBar
+            android:id="@+id/caloriePickerSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:max="1000"
+            android:min="0"
+            android:progress="0"
+
+            android:hapticFeedbackEnabled="true"
+            android:thumbOffset="1dp"
+
+            android:splitTrack="false"
+            android:progressDrawable="@drawable/calorie_picker_progress"
+            android:thumb="@drawable/calorie_picker_thumb"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/calorieCountGuessTextView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <TextView
         android:id="@+id/foodNameTextView"
@@ -122,21 +203,6 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/foodNameTextView" />
-
-    <TextView
-        android:id="@+id/calorieCountGuessTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/app_padding"
-        android:layout_marginStart="@dimen/app_padding"
-        android:minHeight="@dimen/app_padding"
-        android:text="0"
-        android:textAlignment="center"
-        android:textSize="32sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pointsValueTextView" />
 
     <TextView
         android:id="@+id/timerTextView"
