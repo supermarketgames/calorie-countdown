@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/ic_calorie_countdown_content_description"
+        android:minHeight="200dp"
+        android:src="@drawable/ic_calorie_countdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timerTextView" />
+
+    <!--    <androidx.constraintlayout.motion.widget.MotionLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:minHeight="300dp"-->
+    <!--        app:layoutDescription="@xml/activity_game_carousel_motion_scene"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/timerTextView">-->
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/imageView0"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:contentDescription="@string/ic_calorie_countdown_content_description"-->
+    <!--            android:src="@drawable/ic_calorie_countdown" />-->
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/imageView1"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:contentDescription="@string/ic_calorie_countdown_content_description"-->
+    <!--            android:src="@drawable/ic_calorie_countdown_2"/>-->
+
+    <!--        <androidx.constraintlayout.helper.widget.Carousel-->
+    <!--            android:id="@+id/game_image_carousel"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            app:carousel_backwardTransition="@+id/backward"-->
+    <!--            app:carousel_firstView="@+id/imageView0"-->
+    <!--            app:carousel_forwardTransition="@+id/forward"-->
+    <!--            app:carousel_infinite="true"-->
+    <!--            app:carousel_nextState="@+id/next"-->
+    <!--            app:carousel_previousState="@+id/previous"-->
+    <!--            app:constraint_referenced_ids="imageView0,imageView1" />-->
+
+    <!--    </androidx.constraintlayout.motion.widget.MotionLayout>-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="@dimen/app_padding"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pointsValueTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/layout_border">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="0dp"
+            app:layout_constraintBottom_toTopOf="@id/calorieCountPickerLabelAmountPerServingTextView"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/calorieCountPickerDecorativeSpace"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@color/black"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/calorieCountPickerLabelAmountPerServingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/black"
+            android:text="Amount Per Serving"
+            android:fontFamily="helvetica"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/calorieCountPickerLabelTextView"/>
+
+        <TextView
+            android:id="@+id/calorieCountPickerLabelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="2dp"
+            android:textStyle="bold"
+            android:textSize="36dp"
+            android:text="Calories"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/caloriePickerSeekBar"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+        <TextView
+            android:id="@+id/calorieCountGuessTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:minHeight="@dimen/app_padding"
+            android:text="0"
+            android:textAlignment="textEnd"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="0dp"
+            android:textSize="48dp"
+            android:fontFamily="helvetica"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/caloriePickerSeekBar"
+            app:layout_constraintEnd_toEndOf="parent" />
+        <SeekBar
+            android:id="@+id/caloriePickerSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:max="1000"
+            android:min="0"
+            android:progress="0"
+
+            android:hapticFeedbackEnabled="true"
+            android:thumbOffset="1dp"
+
+            android:splitTrack="false"
+            android:progressDrawable="@drawable/calorie_picker_progress"
+            android:thumb="@drawable/calorie_picker_thumb"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/calorieCountGuessTextView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/foodNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/app_padding"
+        android:layout_marginStart="@dimen/app_padding"
+        android:minHeight="32dp"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView0" />
+
+    <TextView
+        android:id="@+id/xCountLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/app_padding"
+        android:text="X's: "
+        android:textAlignment="viewStart"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/foodNameTextView" />
+
+    <TextView
+        android:id="@+id/xCountValueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textAlignment="viewStart"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@id/xCountLabelTextView"
+        app:layout_constraintTop_toBottomOf="@id/foodNameTextView" />
+
+    <TextView
+        android:id="@+id/pointsLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Points: "
+        android:textAlignment="viewStart"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@id/pointsValueTextView"
+        app:layout_constraintTop_toBottomOf="@id/foodNameTextView" />
+
+    <TextView
+        android:id="@+id/pointsValueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/app_padding"
+        android:text="0"
+        android:textAlignment="viewStart"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/foodNameTextView" />
+
+    <TextView
+        android:id="@+id/timerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="60"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="@id/gameReturnFloatingActionButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/gameReturnFloatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/app_padding"
+        android:layout_marginTop="@dimen/app_padding"
+        android:adjustViewBounds="false"
+        android:baselineAlignBottom="false"
+        android:clickable="true"
+        android:contentDescription="@string/back_content_description"
+        android:scaleType="center"
+        android:src="@drawable/abc_vector_test"
+        app:backgroundTint="@color/teal_200"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rippleColor="#FFFFFF" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,7 @@
         Countdown
     </string>
     <string name="title_activity_landing_page">LandingPageActivity</string>
+    <string name="title_activity_game">GameActivity</string>
     <string name="title_activity_high_scores">HighScoresActivity</string>
     <string name="title_activity_settings">SettingsActivity</string>
 
@@ -14,12 +15,17 @@
     <string name="high_score_label">High Scores</string>
     <string name="settings_content_description">Settings</string>
 
+    <!-- activity_game -->
+    <string name="game_image_carousel_description">Game Image Carousel</string>
+    <string name="ic_calorie_countdown_content_description">Calorie Countdown Icon</string>
+
     <!-- fragment_high_scores -->
     <string name="back_content_description">Return to home</string>
 
     <!-- fragment_settings -->
     <!-- Header -->
     <string name="settings_label">Settings</string>
+    <string name="game_label">Game</string>
 
     <!-- Switches -->
     <string name="vibrate_label">Vibrate</string>
